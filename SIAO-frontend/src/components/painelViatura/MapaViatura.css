@@ -1,0 +1,72 @@
+.mapa-viatura-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mapa-info {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.distancia-info, .ocorrencia-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.distancia-info i, .ocorrencia-info i {
+  font-size: 20px;
+}
+
+/* Estilos para os popups do Leaflet */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 1rem;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.leaflet-popup-content strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  color: var(--primary);
+}
+
+/* Ajustes para o modo noturno */
+.modo-noturno .leaflet-container {
+  filter: brightness(0.8) invert(1) hue-rotate(180deg);
+}
+
+.modo-noturno .leaflet-control-attribution {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .mapa-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .distancia-info, .ocorrencia-info {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "siao-frontend",
+  "version": "1.0.0",
+  "description": "Sistema Integrado de Atendimento a Ocorrências - Frontend",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.5",
+    "axios": "^1.4.0",
+    "leaflet": "^1.9.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.4",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.30.2",
+    "react-toastify": "^9.1.3",
+    "socket.io-client": "^4.6.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.5"
+  }
+}

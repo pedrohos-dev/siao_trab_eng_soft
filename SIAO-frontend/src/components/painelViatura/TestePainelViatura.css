@@ -1,0 +1,351 @@
+.teste-painel-viatura {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Painel de Teste */
+.test-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: #ffffff;
+  border-left: 2px solid #e0e0e0;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+
+.test-panel.open {
+  right: 0;
+}
+
+.test-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #1a237e;
+  color: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.test-panel-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.test-panel-content {
+  padding: 20px;
+}
+
+/* Ações de Teste */
+.test-actions {
+  margin-bottom: 30px;
+}
+
+.test-actions h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.test-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-test {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn-test:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-test.primary {
+  background: #2196f3;
+  color: white;
+}
+
+.btn-test.warning {
+  background: #ff9800;
+  color: white;
+}
+
+.btn-test.success {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-test.info {
+  background: #00bcd4;
+  color: white;
+}
+
+.btn-test.danger {
+  background: #f44336;
+  color: white;
+}
+
+.btn-test.auto {
+  background: #9c27b0;
+  color: white;
+  grid-column: 1 / -1;
+}
+
+/* Logs de Teste */
+.test-logs {
+  margin-bottom: 30px;
+}
+
+.logs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logs-header h4 {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-clear {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  color: #666;
+  transition: background-color 0.2s;
+}
+
+.btn-clear:hover {
+  background: #e0e0e0;
+}
+
+.logs-content {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.no-logs {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  margin: 0;
+}
+
+.log-entry {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 11px;
+  display: flex;
+  gap: 10px;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-entry.success {
+  background: #e8f5e8;
+  border-left: 3px solid #4caf50;
+}
+
+.log-entry.error {
+  background: #ffeaea;
+  border-left: 3px solid #f44336;
+}
+
+.log-entry.warning {
+  background: #fff3e0;
+  border-left: 3px solid #ff9800;
+}
+
+.log-entry.info {
+  background: #e3f2fd;
+  border-left: 3px solid #2196f3;
+}
+
+.log-time {
+  color: #666;
+  font-weight: 500;
+  min-width: 60px;
+}
+
+.log-message {
+  color: #333;
+  flex: 1;
+}
+
+/* Informações */
+.test-info h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.info-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.info-item {
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-item strong {
+  color: #666;
+}
+
+/* Botão Flutuante */
+.floating-test-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #1a237e;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.floating-test-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Interface Principal */
+.main-interface {
+  width: 100%;
+  height: 100vh;
+  transition: margin-right 0.3s ease;
+}
+
+.test-panel.open ~ .main-interface {
+  margin-right: 400px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .test-panel {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .test-panel.open ~ .main-interface {
+    margin-right: 0;
+    display: none;
+  }
+  
+  .test-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .floating-test-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* Modo Escuro */
+.modo-noturno .test-panel {
+  background: #2a2a2a;
+  border-left-color: #444;
+}
+
+.modo-noturno .test-panel-header {
+  background: #1a1a1a;
+}
+
+.modo-noturno .test-actions h4,
+.modo-noturno .logs-header h4,
+.modo-noturno .test-info h4 {
+  color: #f0f0f0;
+}
+
+.modo-noturno .logs-content {
+  background: #333;
+  border-color: #555;
+}
+
+.modo-noturno .log-entry {
+  border-bottom-color: #555;
+  color: #f0f0f0;
+}
+
+.modo-noturno .log-time {
+  color: #ccc;
+}
+
+.modo-noturno .info-item {
+  background: #333;
+  color: #f0f0f0;
+}
+
+.modo-noturno .info-item strong {
+  color: #ccc;
+}
+
+.modo-noturno .btn-clear {
+  background: #444;
+  border-color: #666;
+  color: #ccc;
+}
+
+.modo-noturno .btn-clear:hover {
+  background: #555;
+}

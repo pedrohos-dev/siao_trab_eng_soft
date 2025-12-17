@@ -1,0 +1,113 @@
+.notification-toast {
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--surface);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+  min-width: 300px;
+  max-width: 450px;
+}
+
+.notification-toast.success {
+  border-left: 4px solid var(--success);
+}
+
+.notification-toast.error {
+  border-left: 4px solid var(--error);
+}
+
+.notification-toast.warning {
+  border-left: 4px solid var(--warning);
+}
+
+.notification-toast.info {
+  border-left: 4px solid var(--info);
+}
+
+.toast-icon {
+  margin-right: var(--spacing-md);
+}
+
+.toast-icon i {
+  font-size: 24px;
+}
+
+.notification-toast.success .toast-icon i {
+  color: var(--success);
+}
+
+.notification-toast.error .toast-icon i {
+  color: var(--error);
+}
+
+.notification-toast.warning .toast-icon i {
+  color: var(--warning);
+}
+
+.notification-toast.info .toast-icon i {
+  color: var(--info);
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+}
+
+.toast-message {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  margin-left: var(--spacing-sm);
+}
+
+.toast-close:hover {
+  color: var(--text-primary);
+}
+
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  animation: progress-bar 5000ms linear;
+}
+
+.notification-toast.success .toast-progress {
+  background-color: var(--success);
+}
+
+.notification-toast.error .toast-progress {
+  background-color: var(--error);
+}
+
+.notification-toast.warning .toast-progress {
+  background-color: var(--warning);
+}
+
+.notification-toast.info .toast-progress {
+  background-color: var(--info);
+}
+
+@keyframes progress-bar {
+  from { width: 100%; }
+  to { width: 0%; }
+}

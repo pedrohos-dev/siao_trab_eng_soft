@@ -1,0 +1,37 @@
+{
+  "name": "siao-backend",
+  "version": "1.0.0",
+  "description": "Sistema Integrado de Atendimento a Ocorrências - Backend",
+  "main": "SIAO-backend/src/app.js",
+  "scripts": {
+    "dev": "nodemon SIAO-backend/src/app.js",
+    "start": "node SIAO-backend/src/app.js",
+    "seed": "node src/scripts/seedData.js"
+  },
+  "keywords": [
+    "siao",
+    "policia",
+    "ocorrencias"
+  ],
+  "author": "SIAO Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "bcrypt": "^5.1.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "fs-extra": "^11.1.1",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "react-router-dom": "^7.10.1",
+    "socket.io": "^4.6.2",
+    "uuid": "^9.0.0",
+    "winston": "^3.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
