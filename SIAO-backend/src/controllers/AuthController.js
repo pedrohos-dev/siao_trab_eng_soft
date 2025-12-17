@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('../database/jsonDatabase');
 const { jwtSecret, jwtExpire } = require('../config/environment');
@@ -26,7 +26,7 @@ class AuthController {
       }
 
       // Verificar senha
-      const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
+      const senhaCorreta = bcrypt.compareSync(senha, usuario.senha);
       if (!senhaCorreta) {
         return res.status(401).json({ error: 'Credenciais inválidas' });
       }
@@ -98,13 +98,13 @@ class AuthController {
       }
       
       // Verificar senha atual
-      const senhaCorreta = await bcrypt.compare(senhaAtual, usuario.senha);
+      const senhaCorreta = bcrypt.compareSync(senhaAtual, usuario.senha);
       if (!senhaCorreta) {
         return res.status(401).json({ error: 'Senha atual incorreta' });
       }
       
       // Hash da nova senha
-      const senhaHash = await bcrypt.hash(novaSenha, 10);
+      const senhaHash = bcrypt.hashSync(novaSenha, 10);
       
       // Atualizar senha
       db.update('usuarios', usuario.id, {

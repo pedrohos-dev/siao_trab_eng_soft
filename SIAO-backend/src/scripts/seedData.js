@@ -1,5 +1,5 @@
 const db = require('../database/jsonDatabase');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 async function seed() {
   console.log('🌱 Iniciando seed de dados mockados...');
@@ -32,7 +32,7 @@ async function seed() {
   console.log('✅ Órgãos criados');
 
   // 2. Criar Usuários
-  const senhaHash = await bcrypt.hash('senha123', 10);
+  const senhaHash = bcrypt.hashSync('senha123', 10);
 
   const operadorCentral = db.create('usuarios', {
     nome: 'Operador Central',

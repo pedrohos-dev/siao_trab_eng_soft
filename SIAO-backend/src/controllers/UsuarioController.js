@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const db = require('../database/jsonDatabase');
 
 class UsuarioController {
@@ -27,7 +27,7 @@ class UsuarioController {
       }
 
       // Hash da senha
-      const senhaHash = await bcrypt.hash(senha, 10);
+      const senhaHash = bcrypt.hashSync(senha, 10);
 
       const usuario = db.create('usuarios', {
         nome,
@@ -161,7 +161,7 @@ class UsuarioController {
 
       // Se estiver atualizando a senha, fazer hash
       if (updates.senha) {
-        updates.senha = await bcrypt.hash(updates.senha, 10);
+        updates.senha = bcrypt.hashSync(updates.senha, 10);
       }
 
       const usuarioAtualizado = db.update('usuarios', id, updates);
@@ -239,7 +239,7 @@ class UsuarioController {
       }
       
       // Hash da nova senha
-      const senhaHash = await bcrypt.hash(novaSenha, 10);
+      const senhaHash = bcrypt.hashSync(novaSenha, 10);
       
       const usuarioAtualizado = db.update('usuarios', id, {
         senha: senhaHash
